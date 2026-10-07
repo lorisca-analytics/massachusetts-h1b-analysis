@@ -1,0 +1,4 @@
+# Keep the 22MB working CSV out of git. Rebuild it any time via data/README.md.
+data/*.csv
+__pycache__/
+.ipynb_checkpoints/

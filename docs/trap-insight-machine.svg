@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" font-family="Georgia, 'Times New Roman', serif">
+  <rect width="1200" height="520" fill="#faf9f7"/>
+  <text x="600" y="44" text-anchor="middle" font-size="26" font-weight="bold" fill="#1a1a1a">Reading the labor market: trap → insight → machine</text>
+
+  <!-- TRAP -->
+  <g>
+    <rect x="40" y="80" width="340" height="400" rx="10" fill="#fdecea" stroke="#c0392b" stroke-width="2"/>
+    <text x="210" y="118" text-anchor="middle" font-size="20" font-weight="bold" fill="#c0392b" font-family="Arial, sans-serif">THE TRAP</text>
+    <text x="210" y="150" text-anchor="middle" font-size="16" font-style="italic" fill="#333">What everyone assumes</text>
+    <text x="60" y="195" font-size="15" fill="#333">
+      <tspan x="60" dy="0">“H-1B is a tech-visa game.</tspan>
+      <tspan x="60" dy="24">Business roles barely get</tspan>
+      <tspan x="60" dy="24">sponsored — and pay less.”</tspan>
+    </text>
+    <text x="60" y="300" font-size="15" fill="#333">
+      <tspan x="60" dy="0">Analyst traps:</tspan>
+      <tspan x="60" dy="24">✕ drop the “duplicate” rows</tspan>
+      <tspan x="60" dy="24">✕ average the wages</tspan>
+      <tspan x="60" dy="24">✕ keyword-match the job titles</tspan>
+    </text>
+    <text x="60" y="430" font-size="14" font-style="italic" fill="#777">
+      <tspan x="60" dy="0">Each one feels like rigor.</tspan>
+      <tspan x="60" dy="22">Each one deletes the signal.</tspan>
+    </text>
+  </g>
+
+  <!-- arrow -->
+  <text x="402" y="290" font-size="40" fill="#999">→</text>
+
+  <!-- INSIGHT -->
+  <g>
+    <rect x="440" y="80" width="340" height="400" rx="10" fill="#eaf4ea" stroke="#27864a" stroke-width="2"/>
+    <text x="610" y="118" text-anchor="middle" font-size="20" font-weight="bold" fill="#27864a" font-family="Arial, sans-serif">THE INSIGHT</text>
+    <text x="610" y="150" text-anchor="middle" font-size="16" font-style="italic" fill="#333">What the data actually says</text>
+    <text x="460" y="195" font-size="15" fill="#333">
+      <tspan x="460" dy="0">✓ Filing <tspan font-weight="bold">activity</tspan> is the signal —</tspan>
+      <tspan x="460" dy="24">   duplicates are real intent</tspan>
+      <tspan x="460" dy="24">✓ The <tspan font-weight="bold">median</tspan> survives the typo’d wages</tspan>
+      <tspan x="460" dy="24">✓ <tspan font-weight="bold">SOC codes</tspan> beat keyword lists</tspan>
+    </text>
+    <text x="460" y="330" font-size="15" fill="#333">
+      <tspan x="460" dy="0">Business roles: <tspan font-weight="bold">same volume,</tspan></tspan>
+      <tspan x="460" dy="24"><tspan font-weight="bold">same pay</tspan> as analytics —</tspan>
+      <tspan x="460" dy="24">but <tspan font-weight="bold">no STEM extension</tspan>.</tspan>
+    </text>
+    <text x="460" y="430" font-size="14" font-style="italic" fill="#777">
+      <tspan x="460" dy="0">Not a pay cut. Not a premium.</tspan>
+      <tspan x="460" dy="22">A tighter clock.</tspan>
+    </text>
+  </g>
+
+  <!-- arrow -->
+  <text x="802" y="290" font-size="40" fill="#999">→</text>
+
+  <!-- MACHINE -->
+  <g>
+    <rect x="840" y="80" width="320" height="400" rx="10" fill="#eaf0fa" stroke="#2b5fc0" stroke-width="2"/>
+    <text x="1000" y="118" text-anchor="middle" font-size="20" font-weight="bold" fill="#2b5fc0" font-family="Arial, sans-serif">THE MACHINE</text>
+    <text x="1000" y="150" text-anchor="middle" font-size="16" font-style="italic" fill="#333">The pipeline</text>
+    <g font-family="Arial, sans-serif" font-size="13.5" fill="#1a1a1a">
+      <rect x="870" y="180" width="260" height="34" rx="17" fill="#fff" stroke="#2b5fc0"/>
+      <text x="1000" y="202" text-anchor="middle">DOL filings FY2020–2024</text>
+      <text x="1000" y="232" text-anchor="middle" font-size="20" fill="#999">↓</text>
+      <rect x="870" y="244" width="260" height="34" rx="17" fill="#fff" stroke="#2b5fc0"/>
+      <text x="1000" y="266" text-anchor="middle">MA filter → certified H-1B</text>
+      <text x="1000" y="296" text-anchor="middle" font-size="20" fill="#999">↓</text>
+      <rect x="870" y="308" width="260" height="34" rx="17" fill="#fff" stroke="#2b5fc0"/>
+      <text x="1000" y="330" text-anchor="middle">normalize wages → median</text>
+      <text x="1000" y="360" text-anchor="middle" font-size="20" fill="#999">↓</text>
+      <rect x="870" y="372" width="260" height="34" rx="17" fill="#fff" stroke="#2b5fc0"/>
+      <text x="1000" y="394" text-anchor="middle">SOC grouping (IT mgrs out)</text>
+      <text x="1000" y="424" text-anchor="middle" font-size="20" fill="#999">↓</text>
+      <rect x="870" y="436" width="260" height="34" rx="17" fill="#2b5fc0"/>
+      <text x="1000" y="458" text-anchor="middle" fill="#fff">groupby: filings · pay · STEM</text>
+    </g>
+  </g>
+</svg>
