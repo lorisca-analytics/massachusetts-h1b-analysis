@@ -2,6 +2,8 @@
 
 # Reading the Massachusetts labor market through H-1B filings
 
+[![Tests](https://github.com/lorisca-analytics/massachusetts-h1b-analysis/actions/workflows/tests.yml/badge.svg)](https://github.com/lorisca-analytics/massachusetts-h1b-analysis/actions/workflows/tests.yml)
+
 🎥 **[H-1B Massachusetts FY2020-2024 Analysis](https://www.youtube.com/watch?v=SEite--Lkh4)** — a 10-minute walkthrough of the code and every judgment call in it.
 
 I'm an international job seeker on an F-1 visa. Finding the right role isn't the whole job search — I also need an employer who'll go the full distance: OPT → STEM OPT → H-1B. So I read five years of public H-1B filing data (FY2020–2024, Massachusetts) and asked a strategic question: do the general-business roles I'd apply to (HR, talent, consulting, project management, operations) get sponsored as often, and pay as well, as the data-and-analytics roles my visa plan leans on?
@@ -36,7 +38,17 @@ The repeat sponsors, ranked by certified filings:
 4. **Group** roles by SOC occupation code: families 11/13 → general business (minus IT managers), five analytics titles → data & analytics.
 5. **Compare** with one groupby — filings, median wage, STEM share — plus bootstrap confidence intervals on the medians.
 
-The code lives in [`src/h1b_ma.py`](src/h1b_ma.py) — one place, tested against the original analysis. The narrative, charts, and decision log are in [`notebooks/h1b_ma_analysis.ipynb`](notebooks/h1b_ma_analysis.ipynb). `requirements.txt` is pinned; the notebook runs top to bottom with `jupyter nbconvert --execute`.
+The code lives in [`src/h1b_ma.py`](src/h1b_ma.py) — one place, tested against the original analysis and covered by [`tests/`](tests/). The narrative, charts, and decision log are in [`notebooks/h1b_ma_analysis.ipynb`](notebooks/h1b_ma_analysis.ipynb). `requirements.txt` is pinned; the notebook runs top to bottom with `jupyter nbconvert --execute`.
+
+## How to run
+
+```bash
+pip install -r requirements.txt
+python -m pytest -q tests          # cleaning and grouping rules, about a second
+jupyter nbconvert --execute --to notebook --inplace notebooks/h1b_ma_analysis.ipynb
+```
+
+The tests use small hand-made filings, so they run without the data file. They pin down the rules the findings depend on: Certified H-1B only, every pay unit annualized correctly, IT managers removed from the business group in all three code formats, and a reproducible bootstrap interval. The notebook needs the working CSV, rebuilt with the steps in [`data/README.md`](data/README.md). Tests run on every push.
 
 ## What this doesn't do
 
@@ -61,6 +73,8 @@ The full list lives in [`docs/limitations.md`](docs/limitations.md).
 │   └── h1b_ma_analysis.ipynb  # the full analysis, finding first
 ├── src/
 │   └── h1b_ma.py              # the code: load → filter → normalize → group → compare
+├── tests/
+│   └── test_h1b_ma.py         # checks on the filter, wage, grouping and bootstrap rules
 ├── docs/
 │   ├── limitations.md         # everything this data can't say
 │   ├── trap-insight-machine.svg / .png
@@ -71,6 +85,7 @@ The full list lives in [`docs/limitations.md`](docs/limitations.md).
 │   └── pay-comparison.png
 ├── data/
 │   └── README.md              # where the data lives (CSV not checked into git)
+├── .github/workflows/tests.yml   # runs the tests on every push
 ├── requirements.txt
 └── LICENSE (MIT)
 ```
